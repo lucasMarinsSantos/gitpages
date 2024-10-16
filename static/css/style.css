@@ -1,0 +1,148 @@
+@font-face {
+  font-family: "Becket";
+  src: url("../fonts/Becket.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Olden";
+  src: url("../fonts/Olden.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pricedown";
+  src: url("../fonts/Pricedown.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cyber";
+  src: url("../fonts/Cyber.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --fundo: #000000;
+  --fonte1: #d9f2ff;
+  --fonte2: #758291;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  cursor: url("/app/static/images/mouse.png"), auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--fundo);
+  cursor: url("/app/static/images/mouse.png"), auto;
+  background-image: url('/app/static/images/bgmenu.png');
+  background-size: 100% 500px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: black;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: var(--fundo);
+  margin-top: 2%;
+  width: 80%;
+  height: 80%;
+}
+
+.nav > ul > li {
+  padding: 10px 10px;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  margin-right: 65%;
+  margin-top: 3%;
+  justify-content: flex-start;
+  font-family: "Becket", sans-serif;
+  font-size: 60px;
+  color: var(--fonte1);
+}
+
+.button {
+  position: relative;
+  padding-left: 50px;
+  font-family: "Cyber", sans-serif;
+  font-size: 150%;
+  color: var(--fonte2);
+  border: none;
+  background-color: var(--fundo);
+  transition: color 0.3s ease;
+  outline: none;
+}
+
+.button:hover,
+.button:focus,
+.button.selected {
+  color: var(--fonte1);
+  
+}
+
+.button:hover::before,
+.button:focus::before,
+.button.selected::before {
+  opacity: 1;
+}
+
+.button::before {
+  content: url("/app/static/images/arrow.png");
+  position: absolute;
+  left: 5px;
+  top: 80%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.playpause {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  font-size: 20px;
+  background-color: var(--fonte2);
+  color: var(--fonte1);
+  border-radius: 100%;
+  border-color: var(--fonte1);
+  transition: 0.1s ease;
+}
+
+.playpause:hover {
+  font-size: 25px;
+  color: #e0f4ff;
+}
+
+#volume {
+  width: 150px;
+  height: 10px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.player {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-top: 2%;
+}
